@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+#coding:utf-8
+
+require "securerandom"
+require "../log_generator.rb"
+
+1000.times do
+  uuid = SecureRandom.uuid
+
+  IO.write("./logs/#{uuid}.txt", LogGenerator.sample(uuid))
+end
